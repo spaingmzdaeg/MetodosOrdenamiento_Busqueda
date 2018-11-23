@@ -101,6 +101,30 @@ public class Ordenamiento {
 		System.out.println("Cantidad comparaciones:"+comparaciones);
 		System.out.println("Tiempo Ejecucion:"+tiempoFinal+" ms ");
     } 
+	public void insercion(int array[]) {
+		double  alv=System.currentTimeMillis();
+		int aux=0;
+		int j,comps=0,cambs=0;;
+		
+		for(int i=1;i<array.length;i++) {
+
+			aux=array[i];
+			j=i-1;
+			
+			while((j>=0)&&(aux<array[j])) {
+				array[j+1]=array[j];
+                comps++;
+				j--;
+			}
+			array[j+1]=aux;
+			cambs++;
+		}
+		double  alv2=System.currentTimeMillis();
+		mostrarArray(array);
+		System.out.println("Cantidad de Comparaciones :"+comps);
+		System.out.println("Cantidad de intercambios "+cambs);
+		System.out.println("tiempo: "+(alv2-alv)+" ms ");
+	}
 	
 	public void mostrarArray(int array[]) {
 		int i=0;
