@@ -126,6 +126,33 @@ public class Ordenamiento {
 		System.out.println("tiempo: "+(alv2-alv)+" ms ");
 	}
 	
+	public void seleccion(int[] numeros) {
+		int recorrido=0, intercambios=0, compas=0,aux=0;
+		long init = System.nanoTime();
+		for(int i=0;i<numeros.length;i++) {
+			int minimo=i;
+			for(int j=i+1;j<numeros.length;j++) {
+				if(numeros[j]<numeros[minimo]) {
+					minimo = j;
+					intercambios++;
+				}
+				 aux = numeros[i];
+				numeros[i]= numeros[minimo];
+				numeros[minimo]=aux;
+				compas++;
+			}
+			recorrido++;
+		}
+		long fin = System.nanoTime();
+		mostrarArray(numeros);
+		System.out.println("Cantidad de Comparaciones :"+compas);
+		System.out.println("Cantidad de intercambios "+intercambios);
+		System.out.println("Cantidad de Recorridos "+recorrido);
+		System.out.println("tiempo: "+(fin-init)+" ms ");
+		
+	
+	}
+	
 	public void mostrarArray(int array[]) {
 		int i=0;
 		for(i=0;i<array.length;i++) {

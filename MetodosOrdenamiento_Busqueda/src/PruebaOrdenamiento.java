@@ -22,7 +22,7 @@ public class PruebaOrdenamiento {
 		Scanner sc= new Scanner(System.in);
 		Ordenamiento obj=new Ordenamiento();
 		do {
-System.out.println("----Seleccione Algoritmo-----\n A)Burbuja_1\nB)Burbuja_2\nC)Burbuja_3\nD)Insercion\nZ)Salir");
+System.out.println("----Seleccione Algoritmo-----\n A)Burbuja_1\nB)Burbuja_2\nC)Burbuja_3\nD)Insercion\nE)Seleccion\nZ)Salir");
  opcion =sc.nextLine().toUpperCase();
 if(opcion.equals("A")) {
 	System.out.println("eliga cantidad de numeros para la prueba de estres...\nA)1000\nB)10,000\nC)100,000\nD)Un Millon");
@@ -151,6 +151,38 @@ else if(opcion.equals("D")) {
 		obj.mostrarArray(arrayAux);
 		System.out.println("Array ordenado:");
 		obj.insercion(arrayAux);
+	}
+}
+else if(opcion.equals("E")) {
+	System.out.println("eliga cantidad de numeros para la prueba de estres...\nA)1000\nB)10,000\nC)100,000\nD)Un Millon");
+	String var=sc.nextLine().toUpperCase();
+	if(var.equals("A")) {
+		int arrayAux[]=vectorA.clone();
+		System.out.println("Array desordenado:");
+		obj.mostrarArray(arrayAux);
+		System.out.println("Array ordenado:");
+		obj.seleccion(arrayAux);
+	}
+	if(var.equals("B")) {
+		int arrayAux[]=vectorB.clone();
+		System.out.println("Array desordenado:");
+		obj.mostrarArray(arrayAux);
+		System.out.println("Array ordenado:");
+		obj.seleccion(arrayAux);
+	}
+	if(var.equals("C")) {
+		int arrayAux[]=vectorC.clone();
+		System.out.println("Array desordenado:");
+		obj.mostrarArray(arrayAux);
+		System.out.println("Array ordenado:");
+		obj.seleccion(arrayAux);
+	}
+	if(var.equals("D")) {
+		int arrayAux[]=vectorD.clone();
+		System.out.println("Array desordenado:");
+		obj.mostrarArray(arrayAux);
+		System.out.println("Array ordenado:");
+		obj.seleccion(arrayAux);
 	}
 }
 		}while(!opcion.equals("Z"));
