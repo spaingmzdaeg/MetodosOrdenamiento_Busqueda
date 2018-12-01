@@ -22,7 +22,7 @@ public class PruebaOrdenamiento {
 		Scanner sc= new Scanner(System.in);
 		Ordenamiento obj=new Ordenamiento();
 		do {
-System.out.println("----Seleccione Algoritmo-----\n A)Burbuja_1\nB)Burbuja_2\nC)Burbuja_3\nD)Insercion\nE)Seleccion\nF)Shell\nG)Quicksort\n"
+System.out.println("----Seleccione Algoritmo-----\n A)Burbuja_1\nB)Burbuja_2\nC)Burbuja_3\nD)Insercion\nE)Seleccion\nF)Shell\nG)Quicksort\nH)RADIX\nI)Intercalacion\nJ)Mezlca directa\nK)Mezcla Natural"
 		+ "H)RADIX\nZ)Salir");
  opcion =sc.nextLine().toUpperCase();
 if(opcion.equals("A")) {
@@ -281,6 +281,19 @@ else if(opcion.equals("H")) {
 		System.out.println("Array ordenado:");
 		obj.radix(arrayAux);
 	}
+}
+else if(opcion.equals("I")) {
+	obj.intercalacionArchivos();
+}
+else if(opcion.equals("J")) {
+	int vectorAux[]=vectorA;
+	obj.mezclaDirecta(vectorAux, 0, vectorAux.length-1);
+}
+else if(opcion.equals("H")) {
+	
+	obj.mostrar(obj.lectura());
+	System.out.println("");
+	obj.ordenamientoMezclaNatural(obj.lectura());
 }
 		}while(!opcion.equals("Z"));
 
